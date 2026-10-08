@@ -1,0 +1,13 @@
+{
+  "name": "cv-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OğuzZ — portfolyo sitesi",
+  "scripts": {
+    "build:holo": "esbuild holographic-card/entry.ts --bundle --format=iife --minify --target=es2022 --loader:.wgsl=text --outfile=js/holo-card.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "vgpu": "^0.5.0"
+  }
+}

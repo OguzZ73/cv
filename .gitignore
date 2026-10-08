@@ -1,0 +1,8 @@
+# bağımlılıklar ve yerel dosyalar
+node_modules/
+.DS_Store
+
+# iç tasarım notları ve eski deneme dosyaları (yayına gerek yok)
+_macbook-yedek/
+CONTRACT.md
+CONTRACT-MACBOOK.md

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--
+  CSS AJANI İÇİN SINIF NOTLARI (.mock görselleri; saf HTML, stil css/style.css'te)
+  .mock                  : tüm mock görsellerin kapsayıcısı (project__media içinde)
+  .mock--phone           : telefon çerçevesi (dikey, yuvarlak köşe)
+  .mock--browser         : tarayıcı penceresi (yatay)
+  .mock__notch           : telefon çentiği (yalnız .mock--phone)
+  .mock__topbar          : tarayıcı üst çubuğu (yalnız .mock--browser)
+  .mock__dot             : topbar içindeki 3 renkli nokta (pencere düğmeleri)
+  .mock__url             : topbar içindeki adres çubuğu metni
+  .mock__screen          : ekran / içerik alanı
+  .mock__bar             : ekran içi başlık veya durum çubuğu
+  .mock__line            : ekran içi metin satırı (modifier: .mock__line--short, .mock__line--accent)
+  .mock__card            : ekran içi küçük kart/blok
+  .mock__bubble          : bildirim balonu (telefonda, gerçek zamanlı bildirim temsili)
+  .mock__chart           : mini istatistik çubuk grafiği kapsayıcısı; içinde .mock__chart-bar (yükseklik inline --h)
+  .mock__branches        : hikâye dallanması (tarayıcıda); içinde .mock__node ve .mock__branch
+  .mock__home            : telefon alt çubuğu (home indicator)
+  Tüm .mock öğeleri dekoratiftir (aria-hidden="true"); gradyan/ışık CSS'ten gelir.
+-->
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OğuzZ — Web ve Mobil Uygulama Geliştirici</title>
+  <meta name="description" content="OğuzZ: Next.js/React ile web, React Native/Expo ile mobil uygulamalar geliştiren, fikirden yayına uçtan uca ürün çıkaran geliştirici.">
+  <meta name="theme-color" content="#07070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=live2">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <canvas id="holo-canvas" class="holo" aria-hidden="true"></canvas>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <nav aria-label="Ana menü">
+      <a class="nav__link" href="#hero">Giriş</a>
+      <a class="nav__link" href="#about">Hakkımda</a>
+      <a class="nav__link" href="#projects">Projeler</a>
+      <a class="nav__link" href="#skills">Beceriler</a>
+      <a class="nav__link" href="#education">Eğitim</a>
+      <a class="nav__link" href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero__stage">
+      <div class="hero__copy">
+      <p class="hero__eyebrow" data-reveal>Web ve Mobil Uygulama Geliştirici</p>
+      <h1 class="hero__title" id="hero-title"><span class="word">Fikri</span> <span class="word">uçtan</span> <span class="word">uca</span> <span class="word">ürüne</span> <span class="word">dönüştürüyorum.</span></h1>
+      <div class="hero__cta" data-reveal style="--d:.3s">
+        <a class="btn btn--primary" href="#projects">Projelerimi gör</a>
+        <a class="btn btn--ghost" href="#contact">İletişime geç</a>
+      </div>
+      </div>
+      <div class="hero__scene" id="holo-anchor">
+        <p id="holo-note" class="holo__note" hidden></p>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Aşağı kaydır: Hakkımda bölümü"><span aria-hidden="true">Kaydır</span></a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section__head" data-reveal>
+        <p class="section__kicker">Hakkımda</p>
+        <h2 class="section__title" id="about-title">Veriyle düşünen, ürünle ilgilenen geliştirici</h2>
+      </div>
+      <p class="about__text" data-reveal="left">Kullanıcıların içerik ürettiği, paylaştığı ve birbirinin içeriğiyle etkileşime girdiği web ve mobil uygulamalar geliştiriyorum. Web tarafında Next.js/React, mobil tarafta React Native/Expo ile fikirden yayına uçtan uca ürün çıkarıyorum. Uygulamalarımdan biri App Store'da yayında ve gerçek zamanlı bildirim sistemi içeriyor. İstatistik eğitimi sayesinde veriyle çalışan, hesaplama ve analiz içeren sistemler kurabiliyorum.</p>
+      <div class="stats">
+        <div class="stat" data-reveal="zoom">
+          <span class="stat__num"><span data-count="2">2</span></span>
+          <span class="stat__label">Yayında ürün</span>
+        </div>
+        <div class="stat" data-reveal="zoom" style="--d:.1s">
+          <span class="stat__num"><span data-count="2">2</span></span>
+          <span class="stat__label">Platform (web+mobil)</span>
+        </div>
+        <div class="stat" data-reveal="zoom" style="--d:.2s">
+          <span class="stat__num"><span data-count="1">1</span></span>
+          <span class="stat__label">App Store'da</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section__head" data-reveal>
+        <p class="section__kicker">Projeler</p>
+        <h2 class="section__title" id="projects-title">Yayındaki işlerim</h2>
+      </div>
+
+      <div class="stack">
+        <article class="stack__item card3d" style="--i:0" data-reveal="up">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <div class="project__media" aria-hidden="true">
+              <div class="mock mock--phone">
+                <span class="mock__notch"></span>
+                <div class="mock__screen mock__screen--shot"><img src="img/mosaicadream.webp" alt="MosaicaDream uygulaması açılış ekranı" loading="lazy" width="828" height="1682"></div>
+                <span class="mock__home"></span>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__tag" data-depth>iOS · App Store'da yayında</p>
+              <div class="project__title"><img class="app-icon" src="img/mosaicadream-icon.webp" alt="MosaicaDream uygulama simgesi" width="64" height="64" data-depth><h3 data-depth>MosaicaDream: Uyku ve Rüya</h3></div>
+              <p>Uyku, rüya ve bilinç farkındalığı uygulaması. Kullanıcı rüyasını yazar; NLP motoru rüyayı kelime düzeyinde analiz eder ve arketip, entropi ve zaman dilimi kayması istatistiklerini çıkarır. Paylaşılan rüyalara yapılan yorumlar, Supabase Realtime ile rüya sahibine anlık bildirim olarak iletilir. Ayrıca lucid rüya teknikleri rehberi ve uyku rutini içerir.</p>
+              <ul class="chips" aria-label="Teknolojiler">
+                <li class="chip" data-depth>React Native</li>
+                <li class="chip" data-depth>Expo</li>
+                <li class="chip" data-depth>Supabase (Realtime)</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--primary" href="https://apps.apple.com/tr/app/mosaicadream-uyku-ve-r%C3%BCya/id6782171962?l=tr" target="_blank" rel="noopener noreferrer" aria-label="MosaicaDream'i App Store'da aç">App Store</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack__item card3d" style="--i:1" data-reveal="up">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <div class="project__media">
+              <div class="mock mock--browser" data-live-src="https://mosaicaverse.com">
+                <div class="mock__topbar">
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__url">mosaicaverse.com</span>
+                  <a class="mock__act" data-live-extra href="https://mosaicaverse.com" target="_blank" rel="noopener noreferrer" aria-label="Siteyi yeni sekmede aç" hidden>↗</a>
+                  <button type="button" class="mock__act" data-live-close aria-label="Canlı önizlemeyi kapat" hidden>✕</button>
+                </div>
+                <div class="mock__screen mock__screen--shot"><img src="img/mosaicaverse.webp" alt="Mosaicaverse ana sayfa ekran görüntüsü" loading="lazy" width="1440" height="900">
+                  <button type="button" class="live__cover" data-live-open tabindex="-1" aria-hidden="true"><span class="live__badge">▶ Canlı önizle</span></button>
+                  <div class="live" hidden>
+                    <iframe class="live__frame" title="Mosaicaverse canlı önizleme" data-src="https://mosaicaverse.com" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox" allow="fullscreen"></iframe>
+                    <p class="live__status" role="status" hidden></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__tag" data-depth>Web · Canlıda</p>
+              <div class="project__title"><img class="app-icon" src="img/mosaicaverse-icon.webp" alt="Mosaicaverse simgesi" width="64" height="64" data-depth><h3 data-depth>Mosaicaverse</h3></div>
+              <p>Kullanıcıların hikâye yazıp paylaştığı bir platform. Her hikâyeye istenen sayıda farklı son eklenebilir; birden fazla gidiş yolu yazılıp okunabilir. Kullanıcılar birbirinin eserlerini görür.</p>
+              <ul class="chips" aria-label="Teknolojiler">
+                <li class="chip" data-depth>Next.js</li>
+                <li class="chip" data-depth>React</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--primary" href="https://mosaicaverse.com" target="_blank" rel="noopener noreferrer" aria-label="Mosaicaverse sitesini yeni sekmede aç">Siteyi ziyaret et</a>
+                <button type="button" class="btn btn--ghost" data-live-open aria-expanded="false">Canlı önizle</button>
+                <a class="btn btn--ghost" href="https://github.com/OguzZ73/mosaica-showcase" target="_blank" rel="noopener noreferrer" aria-label="GitHub deposunu yeni sekmede aç">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack__item card3d" style="--i:2" data-reveal="up">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <div class="project__media">
+              <div class="mock mock--browser" data-live-src="https://spaceweb-psi.vercel.app">
+                <div class="mock__topbar">
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__dot" aria-hidden="true"></span>
+                  <span class="mock__url">spaceweb-psi.vercel.app</span>
+                  <a class="mock__act" data-live-extra href="https://spaceweb-psi.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Siteyi yeni sekmede aç" hidden>↗</a>
+                  <button type="button" class="mock__act" data-live-close aria-label="Canlı önizlemeyi kapat" hidden>✕</button>
+                </div>
+                <div class="mock__screen mock__screen--shot"><img src="img/olayufku.webp" alt="Olay Ufku ana sayfa ekran görüntüsü: büyük OLAY UFKU başlığı ve kara delik" loading="lazy" width="1440" height="900">
+                  <button type="button" class="live__cover" data-live-open tabindex="-1" aria-hidden="true"><span class="live__badge">▶ Canlı önizle</span></button>
+                  <div class="live" hidden>
+                    <iframe class="live__frame" title="Olay Ufku canlı önizleme" data-src="https://spaceweb-psi.vercel.app" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox" allow="fullscreen"></iframe>
+                    <p class="live__status" role="status" hidden></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__tag" data-depth>Web · Canlıda</p>
+              <div class="project__title">
+                <span class="app-icon app-icon--ou" role="img" aria-label="Olay Ufku simgesi" data-depth><i class="ou-mark"></i></span>
+                <h3 data-depth>Olay Ufku</h3>
+              </div>
+              <p>Dünya'dan Güneş'e, Satürn'e, Samanyolu'nun merkezine ve bir kara deliğin olay ufkuna uzanan, kaydırdıkça ilerleyen interaktif bir uzay yolculuğu. Sahneler gerçek zamanlı ışın izlemeyle çiziliyor; gerçek ölçülere dayalı bilgiler ile görev saati ve ışık gecikmesi gibi canlı göstergeler içeriyor.</p>
+              <ul class="chips" aria-label="Teknolojiler">
+                <li class="chip" data-depth>WebGL2</li>
+                <li class="chip" data-depth>GSAP</li>
+                <li class="chip" data-depth>ScrollTrigger</li>
+                <li class="chip" data-depth>Lenis</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--primary" href="https://spaceweb-psi.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Olay Ufku sitesini yeni sekmede aç">Siteyi ziyaret et</a>
+                <button type="button" class="btn btn--ghost" data-live-open aria-expanded="false">Canlı önizle</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="skillGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4a7ff"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs></svg>
+      <div class="skills__stage">
+      <div class="section__head" data-reveal>
+        <p class="section__kicker">Beceriler</p>
+        <h2 class="section__title" id="skills-title">Neler yapabiliyorum</h2>
+      </div>
+      <div class="skills__grid">
+        <article class="skill-card card3d" data-fx="1">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.5 18.5h3"/></svg></span>
+            <h3 data-depth>Mobil</h3>
+            <p>React Native, Expo ve App Store yayın süreci.</p>
+          </div>
+        </article>
+        <article class="skill-card card3d" data-fx="2">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M13 2.5 4.5 13.5H11l-1 8 8.5-11H12z"/></svg></span>
+            <h3 data-depth>Gerçek zamanlı</h3>
+            <p>Supabase Realtime ile anlık bildirim ve etkileşim.</p>
+          </div>
+        </article>
+        <article class="skill-card card3d" data-fx="3">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.2 3.3 3.2 14.7 0 18"/><path d="M12 3c-3.2 3.3-3.2 14.7 0 18"/></svg></span>
+            <h3 data-depth>Web</h3>
+            <p>Next.js ve React ile web uygulamaları.</p>
+          </div>
+        </article>
+        <article class="skill-card card3d" data-fx="4">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5 20v-8"/><path d="M12 20V5"/><path d="M19 20v-5"/><path d="M3 21h18"/></svg></span>
+            <h3 data-depth>Veri / Analiz</h3>
+            <p>NLP tabanlı metin analizi, istatistiksel hesaplama ve görselleştirme.</p>
+          </div>
+        </article>
+        <article class="skill-card card3d" data-fx="5">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M11 3.5l1.9 5.2 5.1 1.9-5.1 1.9L11 17.7l-1.9-5.2L4 10.6l5.1-1.9z"/><path d="M19 3v4"/><path d="M17 5h4"/></svg></span>
+            <h3 data-depth>Çalışma biçimi</h3>
+            <p>Yapay zeka destekli geliştirme ve hızlı prototipleme; ürün yönetimi ve yayın süreci bana ait.</p>
+          </div>
+        </article>
+        <article class="skill-card card3d" data-fx="6">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <span class="skill__icon" data-depth aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#skillGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="8" r="3.8"/><path d="M2.5 20.5v-1.5a4.5 4.5 0 0 1 4.5-4.5h4a4.5 4.5 0 0 1 4.5 4.5v1.5"/><path d="M16.5 4.4a3.8 3.8 0 0 1 0 7.2"/><path d="M21.5 20.5V19a4.5 4.5 0 0 0-3-4.2"/></svg></span>
+            <h3 data-depth>Ürün odağı</h3>
+            <p>Sosyal ve etkileşimli uygulamalar, kullanıcı içeriği, istatistik gösterimi.</p>
+          </div>
+        </article>
+      </div>
+      <div class="skills__meter" aria-hidden="true"><span class="skills__meter-bar"></span></div>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <div class="section__head" data-reveal>
+        <p class="section__kicker">Eğitim</p>
+        <h2 class="section__title" id="education-title">Akademik geçmiş</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline__item card3d" data-reveal="left">
+          <div class="card3d__inner">
+            <div class="card3d__glare" aria-hidden="true"></div>
+            <p class="timeline__meta" data-depth>Lisans · 2. sınıf (devam ediyor)</p>
+            <h3 data-depth>Dokuz Eylül Üniversitesi</h3>
+            <p>İstatistik Bölümü</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section__head" data-reveal>
+        <p class="section__kicker">İletişim</p>
+        <h2 class="section__title" id="contact-title">Birlikte bir şey kuralım</h2>
+      </div>
+      <div class="contact card3d" data-reveal="zoom">
+        <div class="card3d__inner">
+          <div class="card3d__glare" aria-hidden="true"></div>
+          <h3 data-depth>Bir fikriniz mi var?</h3>
+          <p>Proje, iş birliği veya sadece merhaba demek için bana yazabilirsiniz.</p>
+          <div class="contact__links">
+            <a class="btn btn--primary" href="mailto:oguzhanhyla@gmail.com">oguzhanhyla@gmail.com</a>
+            <a class="btn btn--ghost" href="https://github.com/OguzZ73/mosaica-showcase" target="_blank" rel="noopener noreferrer" aria-label="GitHub profilini yeni sekmede aç">GitHub</a>
+            <a class="btn btn--ghost" href="https://mosaicaverse.com" target="_blank" rel="noopener noreferrer" aria-label="mosaicaverse.com sitesini yeni sekmede aç">mosaicaverse.com</a>
+          </div>
+        </div>
+      </div>
+      <!-- Kart hazır olunca yukarıdaki kutu gizlenir; kart bu alana arka yüzüyle yerleşir. -->
+      <div class="holo-end" id="holo-end">
+        <p class="sr-only">Bir fikriniz mi var? Proje, iş birliği veya sadece merhaba demek için bana yazabilirsiniz.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="holo-links" id="holo-links" hidden></div>
+
+  <footer class="footer">
+    <p>© 2026 Oğuzhan Şamil Avan. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <noscript><style>html:not(.js) [data-reveal]{opacity:1;transform:none}</style></noscript>
+  <script defer src="js/holo-card.js?v=live2"></script>
+  <script defer src="js/main.js?v=live2"></script>
+</body>
+</html>
